@@ -78,9 +78,9 @@ console.log(URL)
   };
 
   // Load todos on mount
-  // useEffect(() => {
-  //   fetchTodos();
-  // }, []);
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
