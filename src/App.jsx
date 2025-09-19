@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { URL } from "../url";
+import { URL } from "./url";
 
 
 function App() {
