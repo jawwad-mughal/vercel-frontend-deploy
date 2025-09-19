@@ -36,7 +36,7 @@ console.log(URL)
   // Delete todo
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`${URL}${id}`);
+      await axios.delete(`${URL}/${id}`);
       fetchTodos(); // ✅ refresh list after deleting
     } catch (err) {
       console.error("Error deleting todo:", err);
@@ -47,7 +47,7 @@ console.log(URL)
   const updateTodo = async () => {
     if (!todoItem || !editId) return;
     try {
-      await axios.put(`${URL}${editId}`, {
+      await axios.put(`${URL}/${editId}`, {
         todoItem,
       });
       setTodoItem("");
@@ -61,7 +61,7 @@ console.log(URL)
   // Toggle complete
   const toggleComplete = async (todo) => {
     try {
-      await axios.put(`${URL}${todo._id}`, {
+      await axios.put(`${URL}/${todo._id}`, {
         ...todo,
         completed: !todo.completed,
       });
@@ -78,9 +78,9 @@ console.log(URL)
   };
 
   // Load todos on mount
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+  // useEffect(() => {
+  //   fetchTodos();
+  // }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
